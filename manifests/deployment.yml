@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: rajpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rajpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: rajpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: rajpipelinesjavascriptdocker 
+          image: k8sdeploy.azurecr.io/rajpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
